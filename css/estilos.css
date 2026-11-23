@@ -496,3 +496,6 @@ body.touch-on #touch-controls.free { display: block; }
 @keyframes finaleShine { to { background-position: -300% 0; } }
 @keyframes finalePop { from { transform: scale(.2); opacity: 0; } to { transform: none; opacity: 1; } }
 @keyframes finaleBlink { 50% { opacity: .55; } }
+
+#home-back { position: absolute; top: 14px; left: 16px; z-index: 6; }
+#home-back.hidden { display: none; }
