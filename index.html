@@ -9,8 +9,8 @@
     <meta name="screen-orientation" content="landscape">
     <title>STREET BRAWL 8: ARCADE ROYALE</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/tailwind.css?v=m7-1">
-    <link rel="stylesheet" href="css/estilos.css?v=m7-1">
+    <link rel="stylesheet" href="css/tailwind.css?v=m7-2">
+    <link rel="stylesheet" href="css/estilos.css?v=m7-2">
 </head>
 <body class="relative flex items-center justify-center">
 
@@ -111,12 +111,7 @@
         <div class="home-slash home-slash-a"></div>
         <div class="home-slash home-slash-b"></div>
 
-        <div id="home-player" class="home-card">
-            <div class="home-card-txt">
-                <div class="home-card-sub">JUGADOR</div>
-                <div id="home-player-name" class="home-card-name">BRAWLER</div>
-            </div>
-        </div>
+        <button id="home-back" type="button" class="btn-arcade btn-back hidden">◀ VOLVER</button>
 
         <div class="home-main">
             <div class="home-eyebrow">ARCADE ROYALE</div>
@@ -569,31 +564,31 @@
     <script src="js/vendor/peerjs.min.js"></script>
     <script>if (typeof Peer === 'undefined') document.write('<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"><\/script>');</script>
 
-    <script src="js/config.js?v=m7-1"></script>
-    <script src="js/idioma.js?v=m7-1"></script>
-    <script src="js/ajustes.js?v=m7-1"></script>
-    <script src="js/musica.js?v=m7-1"></script>
-    <script src="js/sonido.js?v=m7-1"></script>
-    <script src="js/red.js?v=m7-1"></script>
-    <script src="js/estado-ui.js?v=m7-1"></script>
-    <script src="js/arte-luchadores.js?v=m7-1"></script>
-    <script src="js/personalizar.js?v=m7-1"></script>
-    <script src="js/controles-tactiles.js?v=m7-1"></script>
-    <script src="js/motor.js?v=m7-1"></script>
-    <script src="js/coop-datos.js?v=m7-1"></script>
-    <script src="js/motor-coop.js?v=m7-1"></script>
-    <script src="js/menu.js?v=m7-1"></script>
-    <script src="js/fondo-menu.js?v=m7-1"></script>
-    <script src="js/intro.js?v=m7-1"></script>
-    <script src="js/practica.js?v=m7-1"></script>
-    <script src="js/historia.js?v=m7-1"></script>
-    <script src="js/menu-principal.js?v=m7-1"></script>
-    <script src="js/inicio.js?v=m7-1"></script>
+    <script src="js/config.js?v=m7-2"></script>
+    <script src="js/idioma.js?v=m7-2"></script>
+    <script src="js/ajustes.js?v=m7-2"></script>
+    <script src="js/musica.js?v=m7-2"></script>
+    <script src="js/sonido.js?v=m7-2"></script>
+    <script src="js/red.js?v=m7-2"></script>
+    <script src="js/estado-ui.js?v=m7-2"></script>
+    <script src="js/arte-luchadores.js?v=m7-2"></script>
+    <script src="js/personalizar.js?v=m7-2"></script>
+    <script src="js/controles-tactiles.js?v=m7-2"></script>
+    <script src="js/motor.js?v=m7-2"></script>
+    <script src="js/coop-datos.js?v=m7-2"></script>
+    <script src="js/motor-coop.js?v=m7-2"></script>
+    <script src="js/menu.js?v=m7-2"></script>
+    <script src="js/fondo-menu.js?v=m7-2"></script>
+    <script src="js/intro.js?v=m7-2"></script>
+    <script src="js/practica.js?v=m7-2"></script>
+    <script src="js/historia.js?v=m7-2"></script>
+    <script src="js/menu-principal.js?v=m7-2"></script>
+    <script src="js/inicio.js?v=m7-2"></script>
     <script>
         // Pruebas automáticas: abre index.html?pruebas=1 para ejecutarlas (no afecta al juego normal)
         if (/[?&]pruebas\b/.test(location.search)) {
             var sp = document.createElement('script');
-            sp.src = 'tests/pruebas.js?v=m7-1';
+            sp.src = 'tests/pruebas.js?v=m7-2';
             document.body.appendChild(sp);
         }
     </script>
