@@ -60,6 +60,7 @@
 
     // ---------- Pintado ----------
     function renderMenu(animate = true) {
+        $('home-back').classList.toggle('hidden', nav.stack.length <= 1);
         const key = cur();
         items = MENUS[key].items();
         if (nav.idx[key] == null || nav.idx[key] >= items.length) nav.idx[key] = 0;
@@ -110,6 +111,7 @@
 
     // ---------- Tarjeta del jugador ----------
     function refreshPlayerCard() {
+        if (!$('home-player-name')) return;
         const name = ($('input-player-name').value || state.playerName || 'BRAWLER').trim().toUpperCase();
         $('home-player-name').textContent = name;
     }
@@ -150,6 +152,7 @@
         switchScreen('menu');
         $('screen-menu').scrollTop = 0;
     }
+    $('home-back').onclick = back;
     window.addEventListener('sb8-lang', () => { if (homeActive()) renderMenu(false); });
     $('btn-menu-back').onclick = () => { sfx.sfxSelect(); showHome(); };
 
