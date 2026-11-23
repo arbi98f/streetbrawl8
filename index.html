@@ -9,8 +9,8 @@
     <meta name="screen-orientation" content="landscape">
     <title>STREET BRAWL 8: ARCADE ROYALE</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rajdhani:wght@600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/tailwind.css?v=f0-1">
-    <link rel="stylesheet" href="css/estilos.css?v=f0-1">
+    <link rel="stylesheet" href="css/tailwind.css?v=f0-2">
+    <link rel="stylesheet" href="css/estilos.css?v=f0-2">
 </head>
 <body class="relative flex items-center justify-center">
 
@@ -84,6 +84,10 @@
                 <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800 flex justify-between items-center gap-3 flex-wrap text-xs">
                     <span class="text-slate-300 font-bold">Posición y tamaño de los botones</span>
                     <button id="btn-touch-edit" class="btn-arcade px-4 py-1.5 rounded-lg bg-yellow-500/20 hover:bg-yellow-500/30 border border-yellow-500/40 text-yellow-300 text-xs font-bold">✏️ EDITAR BOTONES</button>
+                </div>
+                <div class="bg-slate-900/80 p-2.5 rounded-xl border border-slate-800 flex justify-between items-center gap-3 flex-wrap text-xs">
+                    <span class="text-slate-300 font-bold">Pausa<span class="block text-[10px] font-normal text-slate-500">Botón de la barra superior durante la partida.</span></span>
+                    <span class="px-3 py-1 rounded-lg bg-slate-900 text-slate-300 font-bold border border-slate-800 whitespace-nowrap">⏸ (fijo)</span>
                 </div>
                 <p class="text-[11px] text-slate-500">En el editor arrastra cada botón para moverlo y usa el control de tamaño para hacerlo más grande o pequeño. Se recomienda el teléfono en horizontal. La visibilidad de los controles táctiles en combate se cambia con el botón 🎮 del HUD.</p>
             </div>
@@ -435,17 +439,25 @@
     <script src="js/vendor/peerjs.min.js"></script>
     <script>if (typeof Peer === 'undefined') document.write('<script src="https://unpkg.com/peerjs@1.5.5/dist/peerjs.min.js"><\/script>');</script>
 
-    <script src="js/config.js?v=f0-1"></script>
-    <script src="js/musica.js?v=f0-1"></script>
-    <script src="js/sonido.js?v=f0-1"></script>
-    <script src="js/red.js?v=f0-1"></script>
-    <script src="js/estado-ui.js?v=f0-1"></script>
-    <script src="js/arte-luchadores.js?v=f0-1"></script>
-    <script src="js/controles-tactiles.js?v=f0-1"></script>
-    <script src="js/motor.js?v=f0-1"></script>
-    <script src="js/coop-datos.js?v=f0-1"></script>
-    <script src="js/motor-coop.js?v=f0-1"></script>
-    <script src="js/menu.js?v=f0-1"></script>
-    <script src="js/inicio.js?v=f0-1"></script>
+    <script src="js/config.js?v=f0-2"></script>
+    <script src="js/musica.js?v=f0-2"></script>
+    <script src="js/sonido.js?v=f0-2"></script>
+    <script src="js/red.js?v=f0-2"></script>
+    <script src="js/estado-ui.js?v=f0-2"></script>
+    <script src="js/arte-luchadores.js?v=f0-2"></script>
+    <script src="js/controles-tactiles.js?v=f0-2"></script>
+    <script src="js/motor.js?v=f0-2"></script>
+    <script src="js/coop-datos.js?v=f0-2"></script>
+    <script src="js/motor-coop.js?v=f0-2"></script>
+    <script src="js/menu.js?v=f0-2"></script>
+    <script src="js/inicio.js?v=f0-2"></script>
+    <script>
+        // Pruebas automáticas: abre index.html?pruebas=1 para ejecutarlas (no afecta al juego normal)
+        if (/[?&]pruebas\b/.test(location.search)) {
+            var sp = document.createElement('script');
+            sp.src = 'tests/pruebas.js?v=f1-1';
+            document.body.appendChild(sp);
+        }
+    </script>
 </body>
 </html>
