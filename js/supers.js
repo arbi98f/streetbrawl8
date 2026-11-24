@@ -177,7 +177,7 @@ const SuperMoves = (() => {
             if (z.a < LAVA_START || (z.a - LAVA_START) % LAVA_TICK !== 0) return;
             for (const t of e.fighters) {
                 if (!t.alive || t.id === o.id || !e.isEnemy(o, t) || !e.sameLane(o, t)) continue;
-                if (t.onGround && !t.inJuggle && t.invuln <= 0) {
+                if (t.onGround && !t.onPlat && !t.inJuggle && t.invuln <= 0) {   // las plataformas están a salvo de la lava
                     const st = z.hits[t.id] = (z.hits[t.id] || 0) + 1;
                     tickDamage(e, o, t, Math.min(36, 8 + 3 * st));
                     e.spawnBurst(t.x, t.y - 20, '#f97316', 5);
