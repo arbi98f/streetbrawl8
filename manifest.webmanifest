@@ -1,0 +1,18 @@
+{
+  "name": "Street Brawl 8: Arcade Royale",
+  "short_name": "Street Brawl 8",
+  "description": "Juego de peleas arcade para 1–8 luchadores, offline y online.",
+  "lang": "es",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "fullscreen",
+  "display_override": ["fullscreen", "standalone"],
+  "orientation": "landscape",
+  "background_color": "#07090e",
+  "theme_color": "#07090e",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
