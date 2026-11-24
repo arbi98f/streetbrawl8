@@ -1566,9 +1566,14 @@ class BattleArenaEngine {
         if (attacker) {
             attacker.damageDealt += rawDamage;
             attacker.mp = Math.min(attacker.maxMp, attacker.mp + ({ light: 8, medium: 12, heavy: 16 }[kind] || 6));
-            attacker.comboCount++;
-            attacker.comboTimer = 100;
+            // El contador de HITS cuenta solo golpes encadenados sobre un rival aturdido; daño de zona/peligro no cuenta
+            if (!opts.chip && !hazard && attacker !== target) {
+                attacker.comboCount = target.comboTaken > 1 ? Math.max(target.comboTaken, attacker.comboCount + 1) : 1;
+                attacker.comboTimer = 70;
+            }
         }
+        // Recibir un golpe corta tu propia cadena de HITS
+        if (!opts.chip && target.comboCount) { target.comboCount = 0; target.comboTimer = 0; }
 
         // Efectos SOLO visuales: nada congela la partida
         const fxKind = opts.chip ? 'chip' : (hazard ? 'hazard' : kind);
@@ -2292,7 +2297,7 @@ class BattleArenaEngine {
                 kos: f.kos, deaths: f.deaths, rt: f.respawnT, rs: f.rs, damageDealt: f.damageDealt, team: f.team,
                 invuln: f.invuln, heldBy: f.heldBy, rollDir: f.rollDir,
                 blockStun: f.blockStun, guardShow: f.guardShow, airDir: f.airDir,
-                focusedTargetId: f.focusedTargetId, focusTimer: f.focusTimer
+                focusedTargetId: f.focusedTargetId, focusTimer: f.focusTimer, cc: f.comboCount || 0
             })),
             projectiles: this.projectiles.map(p => ({ id: p.id, ownerId: p.ownerId, team: p.team, kind: p.kind, x: r1(p.x), y: r1(p.y), vx: p.vx, radius: p.radius, isSuper: p.isSuper, color: p.color, life: p.life, age: p.age })),
             zn: SuperMoves.pack(this),
@@ -2329,6 +2334,7 @@ class BattleArenaEngine {
                 f.team = rf.team; f.invuln = rf.invuln; f.stunTimer = rf.stunTimer; f.inJuggle = rf.inJuggle; f.heldBy = rf.heldBy;
                 f.blockStun = rf.blockStun || 0; f.airDir = rf.airDir;
                 f.focusedTargetId = rf.focusedTargetId != null ? rf.focusedTargetId : null; f.focusTimer = rf.focusTimer || 0;
+                f.comboCount = rf.cc || 0;
                 if (f.blockStun > 0 || !isLocal) { f.blocking = rf.blocking; f.crouching = rf.crouching; f.guardShow = rf.guardShow; }
 
                 const forced = CLIENT_FORCED.has(rf.state) || !rf.alive;
